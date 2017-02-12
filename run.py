@@ -104,40 +104,111 @@ for profile in all_link:
                 c5 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
             except:
                 c5 = None
+
             c1list.append(c1)
             c2list.append(c2)
             c3list.append(c3)
             c4list.append(c4)
             c5list.append(c5)
 
-    if allh6[0].text == 'Contact information:':
-        c1 = contact_info.nextSibling.nextSibling.text.strip()
-        c2 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        c3 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        c4 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        c5 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        
-    if allh6[1].text == 'Sales:':
-        d1 = sales.nextSibling.nextSibling.text.strip()
-        d2 = sales.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        d3 = sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        d4 = sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        d5 = sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        d6 = sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-    if allh6[2].text == 'Additional Sales Contact:':
-        e1 = add_sales.nextSibling.nextSibling.text.strip()
-        e2 = add_sales.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        e3 = add_sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        e4 = add_sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        e5 = add_sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        e6 = add_sales.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()        
-    if allh6[3].text == 'Marketing and PR:':
-        f1 = pr.nextSibling.nextSibling.text.strip()
-        f2 = pr.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        f3 = pr.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        f4 = pr.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        f5 = pr.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        f6 = pr.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()                
+        elif h6.text == 'Sales:':
+            try:
+                d1 = h6.nextSibling.nextSibling.text.strip()
+            except:
+                d1 = None
+            try:
+                d2 = h6.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                d2 = None
+            try:
+                d3 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                d3 = None
+            try:
+                d4 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                d4 = None
+            try:
+                d5 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                d5 = None
+            try:
+                d6 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                d6 = None
+
+            d1list.append(d1)
+            d2list.append(d2)
+            d3list.append(d3)
+            d4list.append(d4)
+            d5list.append(d5)
+            d6list.append(d6)
+
+        elif h6.text == 'Additional Sales Contact:':
+            try:
+                e1 = h6.nextSibling.nextSibling.text.strip()
+            except:
+                e1 = None
+            try:
+                e2 = h6.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                e2 = None
+            try:
+                e3 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                e3 = None
+            try:
+                e4 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                e4 = None
+            try:
+                e5 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                e5 = None
+            try:
+                e6 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                e6 = None
+
+            e1list.append(e1)
+            e2list.append(e2)
+            e3list.append(e3)
+            e4list.append(e4)
+            e5list.append(e5)
+            e6list.append(e6)
+
+        elif h6.text == 'Marketing and PR:':
+            try:
+                f1 = h6.nextSibling.nextSibling.text.strip()
+            except:
+                f1 = None
+            try:
+                f2 = h6.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                f2 = None
+            try:
+                f3 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                f3 = None
+            try:
+                f4 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                f4 = None
+            try:
+                f5 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                f5 = None
+            try:
+                f6 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                f6 = None
+
+            f1list.append(f1)
+            f2list.append(f2)
+            f3list.append(f3)
+            f4list.append(f4)
+            f5list.append(f5)
+            f6list.append(f6)
         
     soc1 = ss[0].get('href')
     soc2 = ss[1].get('href')
