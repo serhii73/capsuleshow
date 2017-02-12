@@ -7,13 +7,42 @@ all_len = []
 all_field = []
 uniq = []
 all_link = []
-names = []
 sales_emails = []
 web_site =[]
 
+names = []
+descriptions = []
+whereIs = []
+c1list = []
+c2list = []
+c3list = []
+c4list = []
+c5list = []
+d1list = []
+d2list = []
+d3list = []
+d4list = []
+d5list = []
+d6list = []
+e1list = []
+e2list = []
+e3list = []
+e4list = []
+e5list = []
+e6list = []
+f1list = []
+f2list = []
+f3list = []
+f4list = []
+f5list = []
+f6list = []
+soc1list = []
+soc2list = []
+soc3list = []
+soc4list = []
 
 base_url = 'http://capsuleshow.com'
-start_urls = ["http://capsuleshow.com/brands?page={}&view=list".format(x) for x in range(1, 2)]
+start_urls = ["http://capsuleshow.com/brands?page={}&view=list".format(x) for x in range(25, 26)]
 for url in start_urls:
     r = requests.get(url)
     tree = html.fromstring(r.content)
@@ -27,10 +56,24 @@ for profile in all_link:
     soup = BeautifulSoup(r.text)
     tree = html.fromstring(r.content)
     print(base_url+profile)
-    print(tree.xpath("//h6/text()"))
-    name = soup.find('h2').text.strip()
-    where = soup.find('p',{'class', 'country'}).text.strip()
-    description = soup.find("blockquote").text.strip()
+
+    try:
+        name = soup.find('h2').text.strip()
+    except:
+        name = None
+    try:
+        where = soup.find('p',{'class', 'country'}).text.strip()
+    except:
+        where = None
+    try:
+        description = soup.find("blockquote").text.strip()
+    except:
+        description = None
+
+    names.append(name)
+    whereIs.append(where)
+    descriptions.append(description)
+
     allh6 = soup.findAll('h6')
     contact_info = allh6[0]
     sales = allh6[1]
@@ -39,11 +82,11 @@ for profile in all_link:
     soc = soup.find('ul',{'class', 'soc-links list-unstyled'})
     ss = soc.findAll('a')
     if allh6[0].text == 'Contact information:':
-        ci1 = contact_info.nextSibling.nextSibling.text.strip()
-        ci2 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        ci3 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        ci4 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
-        ci5 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+        c1 = contact_info.nextSibling.nextSibling.text.strip()
+        c2 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+        c3 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+        c4 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+        c5 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
         
     if allh6[1].text == 'Sales:':
         d1 = sales.nextSibling.nextSibling.text.strip()
