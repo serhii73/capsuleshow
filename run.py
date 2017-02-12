@@ -1,14 +1,18 @@
 import requests
+import re
 import csv
 from lxml import html
 from bs4 import BeautifulSoup
+
+regex_facebook = r"(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?"
+regex_instagram = r"(?:(?:http|https):\/\/)?(?:www.)?instagram.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?"
+regex_twitter = r"(?:(?:http|https):\/\/)?(?:www.)?twitter.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?"
 
 all_len = []
 all_field = []
 uniq = []
 all_link = []
 sales_emails = []
-web_site =[]
 
 names = []
 descriptions = []
@@ -36,10 +40,10 @@ f3list = []
 f4list = []
 f5list = []
 f6list = []
-soc1list = []
-soc2list = []
-soc3list = []
-soc4list = []
+web_sites = []
+fbs = []
+instagrams = []
+twitters = []
 
 base_url = 'http://capsuleshow.com'
 start_urls = ["http://capsuleshow.com/brands?page={}&view=list".format(x) for x in range(25, 26)]
@@ -209,16 +213,36 @@ for profile in all_link:
             f4list.append(f4)
             f5list.append(f5)
             f6list.append(f6)
-        
-    soc1 = ss[0].get('href')
-    soc2 = ss[1].get('href')
-    soc3 = ss[2].get('href')
-    soc4 = ss[3].get('href')
-    all_len.append(len(tree.xpath("//h6/text()")))#max 6
-    all_field.append(tree.xpath("//h6/text()"))
-    for i in all_field:
-        for y in i:
-            uniq.append(y)
+
+    try:
+        web_site = soup.find('ul',{'class', 'soc-links list-unstyled'}).find('a').get('href').strip()
+    except:
+        web_site = None
+
+    web_sites.append(web_site)
+
+    soc = soup.find('ul', {'class', 'soc-links list-unstyled'})
+    try:
+        p = re.compile(regex_facebook)
+        facebook = p.search(str(soc)).group()
+    except:
+        facebook = None
+    try:
+        p = re.compile(regex_instagram)
+        instagram = p.search(str(soc)).group()
+    except:
+        instagram = None
+    try:
+        p = re.compile(regex_twitter)
+        twitter = p.search(str(soc)).group()
+    except:
+        twitter = None
+
+    fbs.append(facebook)
+    instagrams.append(instagram)
+    twitters.append(twitter)
+
+
 
 
 # ['Contact information:', 'Sales:', 'Additional Sales Contact:', 'Marketing and PR:', 'On the web:', 'Similar brands']
