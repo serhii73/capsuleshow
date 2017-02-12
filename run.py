@@ -46,7 +46,7 @@ instagrams = []
 twitters = []
 
 base_url = 'http://capsuleshow.com'
-start_urls = ["http://capsuleshow.com/brands?page={}&view=list".format(x) for x in range(25, 26)]
+start_urls = ["http://capsuleshow.com/brands?page={}&view=list".format(x) for x in range(1, 2)]
 for url in start_urls:
     r = requests.get(url)
     tree = html.fromstring(r.content)
@@ -251,7 +251,8 @@ print('ready!')
 
 # http://capsuleshow.com/brand/18waits
 
-#with open ('ex.csv','w',encoding='utf8') as csvfile:
-    #writer = csv.writer(csvfile)
-    #for row in zip(urls,names,websites,professions,categories,places,looking_for_list,profile_descriptions,emails,facebooks,instagrams,pinterests,snapchats):
-        #writer.writerow(row) 
+with open ('ex.csv','w',encoding='utf8') as csvfile:
+    writer = csv.writer(csvfile)
+    for row in zip(all_link, names, descriptions, whereIs, c1list, c2list, c3list, c4list, c5list, d1list, d2list, d3list, d4list,
+                   d5list, d6list, e1list ,e2list ,e3list ,e4list ,e5list ,e6list ,f1list ,f2list ,f3list ,f4list ,f5list ,f6list, web_sites, fbs, instagrams, twitters ):
+        writer.writerow(row)
