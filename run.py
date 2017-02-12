@@ -75,12 +75,41 @@ for profile in all_link:
     descriptions.append(description)
 
     allh6 = soup.findAll('h6')
-    contact_info = allh6[0]
-    sales = allh6[1]
-    add_sales = allh6[2]
-    pr = allh6[3]
-    soc = soup.find('ul',{'class', 'soc-links list-unstyled'})
-    ss = soc.findAll('a')
+    # contact_info = allh6[0]
+    # sales = allh6[1]
+    # add_sales = allh6[2]
+    # pr = allh6[3]
+    # soc = soup.find('ul',{'class', 'soc-links list-unstyled'})
+    # ss = soc.findAll('a')
+
+    for h6 in allh6:
+        if h6.text == 'Contact information:':
+            try:
+                c1 = h6.nextSibling.nextSibling.text.strip()
+            except:
+                c1 = None
+            try:
+                c2 = h6.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                c2 = None
+            try:
+                c3 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                c3 = None
+            try:
+                c4 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                c4 = None
+            try:
+                c5 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
+            except:
+                c5 = None
+            c1list.append(c1)
+            c2list.append(c2)
+            c3list.append(c3)
+            c4list.append(c4)
+            c5list.append(c5)
+
     if allh6[0].text == 'Contact information:':
         c1 = contact_info.nextSibling.nextSibling.text.strip()
         c2 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
