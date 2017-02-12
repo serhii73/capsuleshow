@@ -24,6 +24,7 @@ for url in start_urls:
 
 for profile in all_link:
     r = requests.get(base_url+profile)
+    soup = BeautifulSoup(r.text)
     tree = html.fromstring(r.content)
     print(base_url+profile)
     print(tree.xpath("//h6/text()"))
