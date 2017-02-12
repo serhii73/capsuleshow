@@ -1,4 +1,5 @@
 import requests
+import csv
 from lxml import html
 from bs4 import BeautifulSoup
 
@@ -34,6 +35,8 @@ for profile in all_link:
     sales = allh6[1]
     add_sales = allh6[2]
     pr = allh6[3]
+    soc = soup.find('ul',{'class', 'soc-links list-unstyled'})
+    ss = soc.findAll('a')
     if allh6[0].text == 'Contact information:':
         ci1 = contact_info.nextSibling.nextSibling.text.strip()
         ci2 = contact_info.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
@@ -62,6 +65,11 @@ for profile in all_link:
         f4 = pr.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
         f5 = pr.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
         f6 = pr.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()                
+        
+    soc1 = ss[0].get('href')
+    soc2 = ss[1].get('href')
+    soc3 = ss[2].get('href')
+    soc4 = ss[3].get('href')
     all_len.append(len(tree.xpath("//h6/text()")))#max 6
     all_field.append(tree.xpath("//h6/text()"))
     for i in all_field:
@@ -74,3 +82,8 @@ for profile in all_link:
 print('ready!')
 
 # http://capsuleshow.com/brand/18waits
+
+#with open ('ex.csv','w',encoding='utf8') as csvfile:
+    #writer = csv.writer(csvfile)
+    #for row in zip(urls,names,websites,professions,categories,places,looking_for_list,profile_descriptions,emails,facebooks,instagrams,pinterests,snapchats):
+        #writer.writerow(row) 
