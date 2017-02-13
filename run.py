@@ -46,7 +46,7 @@ instagrams = []
 twitters = []
 
 base_url = 'http://capsuleshow.com'
-start_urls = ["http://capsuleshow.com/brands?page={}&view=list".format(x) for x in range(1, 2)]
+start_urls = ["http://capsuleshow.com/brands?page={}&view=list".format(x) for x in range(1, 26)]
 for url in start_urls:
     r = requests.get(url)
     tree = html.fromstring(r.content)
@@ -159,12 +159,12 @@ for profile in all_link:
 
 
 
-    d1list.append(d1)
-    d2list.append(d2)
-    d3list.append(d3)
-    d4list.append(d4)
-    d5list.append(d5)
-    d6list.append(d6)
+        d1list.append(d1)
+        d2list.append(d2)
+        d3list.append(d3)
+        d4list.append(d4)
+        d5list.append(d5)
+        d6list.append(d6)
 
     for h6 in allh6:
         if h6.text == 'Additional Sales Contact:':
