@@ -52,14 +52,14 @@ for url in start_urls:
     tree = html.fromstring(r.content)
     links = tree.xpath("//*[@id='brand-list']//a/@href")
     for link in links:
-        all_link.append(link)
+        all_link.append(base_url+link)
 
 
 for profile in all_link:
-    r = requests.get(base_url+profile)
+    r = requests.get(profile)
     soup = BeautifulSoup(r.text)
     tree = html.fromstring(r.content)
-    print(base_url+profile)
+    print(profile)
 
     try:
         name = soup.find('h2').text.strip()
@@ -241,6 +241,10 @@ for profile in all_link:
     fbs.append(facebook)
     instagrams.append(instagram)
     twitters.append(twitter)
+    
+    print(len(names))
+    print(len(e1list))
+    print('pause')
 
 
 
