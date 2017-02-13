@@ -79,12 +79,6 @@ for profile in all_link:
     descriptions.append(description)
 
     allh6 = soup.findAll('h6')
-    # contact_info = allh6[0]
-    # sales = allh6[1]
-    # add_sales = allh6[2]
-    # pr = allh6[3]
-    # soc = soup.find('ul',{'class', 'soc-links list-unstyled'})
-    # ss = soc.findAll('a')
 
     c1 = None
     c2 = None
@@ -140,11 +134,11 @@ for profile in all_link:
         #     c4 = None
         #     c5 = None
 
-        c1list.append(c1)
-        c2list.append(c2)
-        c3list.append(c3)
-        c4list.append(c4)
-        c5list.append(c5)
+    c1list.append(c1)
+    c2list.append(c2)
+    c3list.append(c3)
+    c4list.append(c4)
+    c5list.append(c5)
 
     for h6 in allh6:
         if h6.text == 'Sales:':
@@ -183,12 +177,12 @@ for profile in all_link:
 
 
 
-        d1list.append(d1)
-        d2list.append(d2)
-        d3list.append(d3)
-        d4list.append(d4)
-        d5list.append(d5)
-        d6list.append(d6)
+    d1list.append(d1)
+    d2list.append(d2)
+    d3list.append(d3)
+    d4list.append(d4)
+    d5list.append(d5)
+    d6list.append(d6)
 
     for h6 in allh6:
         if h6.text == 'Additional Sales Contact:':
@@ -304,7 +298,7 @@ for profile in all_link:
     
     print(len(names))
     print(len(e1list))
-    print('pause')
+
 
 
 
