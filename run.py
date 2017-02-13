@@ -108,14 +108,22 @@ for profile in all_link:
                 c5 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
             except:
                 c5 = None
+                
+        else:
+            c1 = None
+            c2 = None
+            c3 = None
+            c4 = None
+            c5 = None
 
-            c1list.append(c1)
-            c2list.append(c2)
-            c3list.append(c3)
-            c4list.append(c4)
-            c5list.append(c5)
+        c1list.append(c1)
+        c2list.append(c2)
+        c3list.append(c3)
+        c4list.append(c4)
+        c5list.append(c5)
 
-        elif h6.text == 'Sales:':
+    for h6 in allh6:
+        if h6.text == 'Sales:':
             try:
                 d1 = h6.nextSibling.nextSibling.text.strip()
             except:
@@ -141,14 +149,25 @@ for profile in all_link:
             except:
                 d6 = None
 
-            d1list.append(d1)
-            d2list.append(d2)
-            d3list.append(d3)
-            d4list.append(d4)
-            d5list.append(d5)
-            d6list.append(d6)
+        else:
+            d1 = None
+            d2 = None
+            d3 = None
+            d4 = None
+            d5 = None
+            d6 = None
 
-        elif h6.text == 'Additional Sales Contact:':
+
+
+    d1list.append(d1)
+    d2list.append(d2)
+    d3list.append(d3)
+    d4list.append(d4)
+    d5list.append(d5)
+    d6list.append(d6)
+
+    for h6 in allh6:
+        if h6.text == 'Additional Sales Contact:':
             try:
                 e1 = h6.nextSibling.nextSibling.text.strip()
             except:
@@ -173,15 +192,24 @@ for profile in all_link:
                 e6 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
             except:
                 e6 = None
+		
+    else:
+        e1 = None
+        e2 = None
+        e3 = None
+        e4 = None
+        e5 = None
+        e6 = None
 
-            e1list.append(e1)
-            e2list.append(e2)
-            e3list.append(e3)
-            e4list.append(e4)
-            e5list.append(e5)
-            e6list.append(e6)
-
-        elif h6.text == 'Marketing and PR:':
+    e1list.append(e1)
+    e2list.append(e2)
+    e3list.append(e3)
+    e4list.append(e4)
+    e5list.append(e5)
+    e6list.append(e6)
+	
+    for h6 in allh6:
+        if h6.text == 'Marketing and PR:':
             try:
                 f1 = h6.nextSibling.nextSibling.text.strip()
             except:
@@ -206,13 +234,21 @@ for profile in all_link:
                 f6 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
             except:
                 f6 = None
+		
+    else:
+        f1 = None
+        f2 = None
+        f3 = None
+        f4 = None
+        f5 = None
+        f6 = None
 
-            f1list.append(f1)
-            f2list.append(f2)
-            f3list.append(f3)
-            f4list.append(f4)
-            f5list.append(f5)
-            f6list.append(f6)
+    f1list.append(f1)
+    f2list.append(f2)
+    f3list.append(f3)
+    f4list.append(f4)
+    f5list.append(f5)
+    f6list.append(f6)
 
     try:
         web_site = soup.find('ul',{'class', 'soc-links list-unstyled'}).find('a').get('href').strip()
