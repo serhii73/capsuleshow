@@ -86,6 +86,30 @@ for profile in all_link:
     # soc = soup.find('ul',{'class', 'soc-links list-unstyled'})
     # ss = soc.findAll('a')
 
+    c1 = None
+    c2 = None
+    c3 = None
+    c4 = None
+    c5 = None
+    d1 = None
+    d2 = None
+    d3 = None
+    d4 = None
+    d5 = None
+    d6 = None
+    e1 = None
+    e2 = None
+    e3 = None
+    e4 = None
+    e5 = None
+    e6 = None
+    f1 = None
+    f2 = None
+    f3 = None
+    f4 = None
+    f5 = None
+    f6 = None
+
     for h6 in allh6:
         if h6.text == 'Contact information:':
             try:
@@ -108,13 +132,13 @@ for profile in all_link:
                 c5 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
             except:
                 c5 = None
-                
-        else:
-            c1 = None
-            c2 = None
-            c3 = None
-            c4 = None
-            c5 = None
+
+        # else:
+        #     c1 = None
+        #     c2 = None
+        #     c3 = None
+        #     c4 = None
+        #     c5 = None
 
         c1list.append(c1)
         c2list.append(c2)
@@ -148,14 +172,14 @@ for profile in all_link:
                 d6 = h6.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.text.strip()
             except:
                 d6 = None
-
-        else:
-            d1 = None
-            d2 = None
-            d3 = None
-            d4 = None
-            d5 = None
-            d6 = None
+        #
+        # else:
+        #     d1 = None
+        #     d2 = None
+        #     d3 = None
+        #     d4 = None
+        #     d5 = None
+        #     d6 = None
 
 
 
@@ -193,13 +217,13 @@ for profile in all_link:
             except:
                 e6 = None
 		
-    else:
-        e1 = None
-        e2 = None
-        e3 = None
-        e4 = None
-        e5 = None
-        e6 = None
+    # else:
+    #     e1 = None
+    #     e2 = None
+    #     e3 = None
+    #     e4 = None
+    #     e5 = None
+    #     e6 = None
 
     e1list.append(e1)
     e2list.append(e2)
@@ -235,13 +259,13 @@ for profile in all_link:
             except:
                 f6 = None
 		
-    else:
-        f1 = None
-        f2 = None
-        f3 = None
-        f4 = None
-        f5 = None
-        f6 = None
+    # else:
+    #     f1 = None
+    #     f2 = None
+    #     f3 = None
+    #     f4 = None
+    #     f5 = None
+    #     f6 = None
 
     f1list.append(f1)
     f2list.append(f2)
